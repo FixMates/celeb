@@ -1,114 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nayanthara - Biography & Profile</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f2ec">
+  <meta name="description" content="A source-aware directory of adult performers, with age and reported body measurements.">
+  <title>Figure Notes — Adult Performer Profiles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="site-header">
+    <a class="brand" href="#top"><span class="brand-mark">F</span><span>FIGURE <b>NOTES</b></span></a>
+    <nav aria-label="Main navigation"><a href="#profiles">Profiles</a><a href="#method">How we source</a></nav>
+    <a class="header-link" href="#profiles">Browse directory <span aria-hidden="true">↓</span></a>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot"></span> ADULT PERFORMER DIRECTORY <span class="eyebrow-divider">·</span> 30 PROFILES</p>
+        <h1>Profiles, with<br><em>the details</em></h1>
+        <p class="intro">A quick-reference directory of adult performers, with reported ages and body measurements. Figures are attributed to their source and treated as estimates, not official or current measurements.</p>
+        <a class="primary-link" href="#profiles">Explore all profiles <span>↓</span></a>
+        <p class="age-note">Adults only · Educational and biographical reference · 18+</p>
+      </div>
+      <div class="hero-art" aria-label="Original illustrated body measurement guide">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="hero-measure"><span class="hero-measure-label">BUST</span><span class="hero-measure-line"></span><span class="hero-measure-value">—</span></div>
+        <div class="hero-measure measure-waist"><span class="hero-measure-label">WAIST</span><span class="hero-measure-line"></span><span class="hero-measure-value">—</span></div>
+        <div class="hero-measure measure-hips"><span class="hero-measure-label">HIPS</span><span class="hero-measure-line"></span><span class="hero-measure-value">—</span></div>
+        <svg class="hero-figure" viewBox="0 0 250 390" role="img" aria-label="Fully clothed abstract fashion figure with measurement guide lines">
+          <ellipse cx="126" cy="366" rx="69" ry="8" fill="#d9cec2"/>
+          <path d="M105 68h42v40h-42z" fill="#d8aa91"/><ellipse cx="126" cy="46" rx="35" ry="43" fill="#ddb49c"/>
+          <path d="M91 50C83 13 106 0 128 4c27 3 39 21 31 51-7-20-17-32-31-37-10 14-21 22-37 25z" fill="#44352f"/>
+          <path d="M104 103c-20 3-32 13-39 31l15 21-20 86-22 77c-3 9 3 15 11 14 7-1 11-7 14-15l35-82 9-28 10 156h59l9-156 10 28 35 82c3 8 7 14 14 15 8 1 14-5 11-14l-22-77-20-86 15-21c-7-18-19-28-39-31-8 10-17 14-30 14s-22-4-30-14z" fill="#a65343"/>
+          <path d="M103 137c9 10 17 14 23 14s14-4 23-14" fill="none" stroke="#f2dace" stroke-width="2"/>
+          <g stroke="#f7eee7" stroke-width="1.4" stroke-dasharray="4 4"><path d="M70 179h112"/><path d="M82 223h88"/><path d="M63 274h126"/></g>
+          <path d="M98 360h31l-2 19h-42c-5 0-7-4-2-8zM132 360h31l15 11c5 4 3 8-3 8h-42z" fill="#302b28"/>
+        </svg>
+        <div class="art-caption">ORIGINAL FIGURE GUIDE <span>Illustration · not to scale</span></div>
+      </div>
+    </section>
 
-    <header class="hero-header">
-        <h1>Actress Profiles & Measurements</h1>
-        <p>Your ultimate database for celebrity biographies and physical attributes.</p>
-    </header>
+    <section class="directory" id="profiles">
+      <div class="directory-head">
+        <div><p class="eyebrow">THE DIRECTORY</p><h2>Featured profiles</h2><p class="section-subtitle">Browse performer bios and reported stats. Each profile includes four original illustrations and its source link.</p></div>
+        <div class="directory-tools"><label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search performers" aria-label="Search performers"></label><span class="result-count" id="result-count">30 profiles</span></div>
+      </div>
+      <div class="profile-grid" id="profile-grid" aria-live="polite"></div>
+      <p class="no-results" id="no-results" hidden>No profiles match that search. Try another name.</p>
+    </section>
 
-    <main class="profile-container">
-        <!-- Profile Header -->
-        <section class="profile-header">
-            <div class="profile-image">
-                <!-- Replace 'your-image.jpg' with an actual image your repo -->
-                <img src="your-image.jpg" alt="Nayanthara" onerror="this.src='https://via.placeholder.com/300x400?text=Nayanthara'">
-            </div>
-            <div class="profile-intro">
-                <h2>Nayanthara</h2>
-                <p class="profession">Actress and Producer</p>
-                <div class="quick-stats">
-                    <span><strong>Age:</strong> 39 Years</span>
-                    <span><strong>DOB:</strong> 18 Nov 1984</span>
-                    <span><strong>Zodiac:</strong> Scorpio</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Biography & Basic Info -->
-        <section class="info-grid">
-            <div class="info-card">
-                <h3>Biography & Basics</h3>
-                <ul class="info-list">
-                    <li><span>Real Name:</span> Diana Mariam Kurian</li>
-                    <li><span>Birthplace:</span> Bangalore, Karnataka, India</li>
-                    <li><span>Nationality:</span> Indian</li>
-                    <li><span>Religion:</span> Hinduism</li>
-                    <li><span>Education:</span> Graduated (Marthoma College, Thiruvalla)</li>
-                    <li><span>School:</span> Balikamadom Girls Higher Secondary School</li>
-                    <li><span>Hobbies:</span> Traveling</li>
-                </ul>
-            </div>
-
-            <div class="info-card">
-                <h3>Career & Personal Life</h3>
-                <ul class="info-list">
-                    <li><span>Debut Movie:</span> “Manassinakkare” (2003)</li>
-                    <li><span>Marital Status:</span> Married</li>
-                    <li><span>Spouse:</span> Vignesh Shivan</li>
-                    <li><span>Wedding Date:</span> 9 June 2022</li>
-                    <li><span>Past Affairs:</span> Simbu, Prabhu Deva</li>
-                    <li><span>Controversies:</span> Her career and social image were harmed after her boyfriend Simbu’s kissing photos with her became viral online.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Physical Measurements -->
-        <section class="measurements-section">
-            <h3>Physical Attributes & Measurements</h3>
-            <div class="measurements-grid">
-                <div class="measure-card">
-                    <h4>Height</h4>
-                    <p class="big-text">5' 5"</p>
-                    <p class="sub-text">165 cm | 1.65 m</p>
-                </div>
-                <div class="measure-card">
-                    <h4>Weight</h4>
-                    <p class="big-text">57 kg</p>
-                    <p class="sub-text">126 lbs</p>
-                </div>
-                <div class="measure-card">
-                    <h4>Figure Size</h4>
-                    <p class="big-text">34-26-34</p>
-                    <p class="sub-text">In inches</p>
-                </div>
-                <div class="measure-card">
-                    <h4>Bra/Breast Size</h4>
-                    <p class="big-text">34"</p>
-                    <p class="sub-text">Inches</p>
-                </div>
-                <div class="measure-card">
-                    <h4>Waist Size</h4>
-                    <p class="big-text">26"</p>
-                    <p class="sub-text">Inches</p>
-                </div>
-                <div class="measure-card">
-                    <h4>Hip Size</h4>
-                    <p class="big-text">34"</p>
-                    <p class="sub-text">Inches</p>
-                </div>
-                <div class="measure-card">
-                    <h4>Hair Color</h4>
-                    <p class="big-text">Brown</p>
-                </div>
-                <div class="measure-card">
-                    <h4>Eye Color</h4>
-                    <p class="big-text">Black</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Actress Profiles Database. Hosted on GitHub Pages.</p>
-    </footer>
-
+    <section class="method" id="method">
+      <div><p class="eyebrow">EDITORIAL NOTES</p><h2>How to read these figures</h2></div>
+      <div class="method-copy"><p>Birth dates and measurements are taken from the linked public profile pages. Those pages are community-submitted, and measurements can be incomplete, inconsistent, or out of date. Age is calculated from the listed birth date. “Bust” displays the reported bra size when one is available; waist and hip values are shown in inches. Hip measurement is a circumference figure, not a separate “butt size.”</p><p>Every illustration on this site is an original generic fashion diagram, fully clothed and not to scale. The diagrams identify measurement areas only; they are not photographs, likenesses, or depictions of any performer’s actual body.</p><p>TerraBox fields are provided for owner-supplied links. Saving a link stores it in the current browser only. To publish a permanent link for all visitors, update that performer’s <code>terabox</code> value in <code>profiles.js</code> and commit the change.</p></div>
+    </section>
+  </main>
+  <footer><a class="brand footer-brand" href="#top"><span class="brand-mark">F</span><span>FIGURE <b>NOTES</b></span></a><p>Publicly sourced biographical reference · Original illustrations · 18+</p><span class="copyright">© 2026 FIGURE NOTES</span></footer>
+  <script src="profiles.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

@@ -2,18 +2,7 @@ const cards = document.getElementById('profile-grid');
 const search = document.getElementById('search');
 const resultCount = document.getElementById('result-count');
 const noResults = document.getElementById('no-results');
-const adminPanel = document.getElementById('admin-panel');
-const connectView = document.getElementById('admin-connect-view');
-const adminWorkspace = document.getElementById('admin-workspace');
-const profileList = document.getElementById('admin-profile-list');
-const API_ROOT = 'https://api.github.com/repos/FixMates/celeb/contents';
-const API_VERSION = '2026-03-10';
-const uploadKinds = [
-  { key: 'intro', label: 'Intro' },
-  { key: 'bust', label: 'Bust' },
-  { key: 'waist', label: 'Waist' },
-  { key: 'hips', label: 'Hip' }
-];
+
 const palette = [
   ['#eee0d6','#f7eee8','#a65343','#473933'], ['#e4e1d8','#f3f0e7','#70725f','#433b34'],
   ['#e9dedb','#f6eeeb','#945e69','#423533'], ['#e5e2dc','#f3f0e8','#747b70','#463b32'],
@@ -21,10 +10,6 @@ const palette = [
 ];
 
 let currentProfiles = [];
-let profileDataSha = '';
-let githubToken = '';
-let editingSlug = '';
-const previewUrls = new Map();
 
 function ageFromBirth(dateText) {
   if (!dateText) return 'Not listed';
@@ -115,213 +100,7 @@ async function loadPublicProfiles() {
   }
 }
 
-function setStatus(element, message, state = '') {
-  element.textContent = message;
-  element.dataset.state = state;
-}
 
-async function githubRequest(path, { method = 'GET', body = null } = {}) {
-  if (!githubToken) throw new Error('Connect to GitHub before saving changes.');
-  const encodedPath = path.split('/').map(encodeURIComponent).join('/');
-  const url = `https://api.github.com/repos/FixMates/celeb/contents/${encodedPath}${method === 'GET' ? '?ref=main' : ''}`;
-  const response = await fetch(url, {
-    method,
-    headers: {
-      Accept: 'application/vnd.github+json',
-      Authorization: `Bearer ${githubToken}`,
-      'X-GitHub-Api-Version': API_VERSION,
-      ...(body ? { 'Content-Type': 'application/json' } : {})
-    },
-    ...(body ? { body: JSON.stringify(body) } : {})
-  });
-  const result = await response.json().catch(() => ({}));
-  if (!response.ok) {
-    const error = new Error(result.message || `GitHub returned ${response.status}.`);
-    error.status = response.status;
-    throw error;
-  }
-  return result;
-}
-
-function decodeGitHubFile(content) {
-  const binary = atob(content.replace(/\s/g, ''));
-  const bytes = Uint8Array.from(binary, character => character.charCodeAt(0));
-  return new TextDecoder('utf-8').decode(bytes);
-}
-
-function encodeBase64(bytes) {
-  let binary = '';
-  const chunkSize = 0x8000;
-  for (let start = 0; start < bytes.length; start += chunkSize) {
-    binary += String.fromCharCode(...bytes.subarray(start, start + chunkSize));
-  }
-  return btoa(binary);
-}
-
-function updateRoster() {
-  document.getElementById('admin-profile-count').textContent = currentProfiles.length;
-  profileList.innerHTML = currentProfiles.map(profile => {
-    const count = uploadKinds.filter(({ key }) => imagePath(profile, key)).length;
-    return `<li><button type="button" data-profile-slug="${escapeText(profile.slug)}" class="roster-button ${profile.slug === editingSlug ? 'selected' : ''}"><span>${escapeText(profile.name)}</span><small>${count}/4 images</small></button></li>`;
-  }).join('');
-}
-
-function selectedProfile() {
-  return currentProfiles.find(profile => profile.slug === editingSlug) || null;
-}
-
-function previewFor(profile, kind) {
-  const index = Math.max(0, currentProfiles.findIndex(item => item.slug === profile.slug));
-  return imagePath(profile, kind) || illustration(profile, kind === 'hips' ? 'Hips' : kind[0].toUpperCase() + kind.slice(1), index);
-}
-
-function selectProfile(slug) {
-  const profile = currentProfiles.find(item => item.slug === slug);
-  if (!profile) return;
-  editingSlug = slug;
-  document.getElementById('editor-profile-name').textContent = profile.name;
-  document.getElementById('admin-terabox').value = profile.terabox || '';
-  for (const { key } of uploadKinds) {
-    const input = document.querySelector(`[data-upload="${key}"]`);
-    const preview = document.querySelector(`[data-preview="${key}"]`);
-    const label = document.querySelector(`[data-file-label="${key}"]`);
-    input.value = '';
-    preview.src = previewFor(profile, key);
-    label.textContent = profile.images?.[key] ? 'Current image saved · choose to replace' : 'No image uploaded yet';
-  }
-  updateRoster();
-  setStatus(document.getElementById('save-status'), 'Select images and/or add a TerraBox share link.');
-}
-
-async function readProfilesFromGitHub() {
-  const file = await githubRequest('profiles.json');
-  const profiles = JSON.parse(decodeGitHubFile(file.content));
-  if (!Array.isArray(profiles) || profiles.length === 0) throw new Error('profiles.json does not contain a profile list.');
-  profileDataSha = file.sha;
-  currentProfiles = profiles;
-  render();
-  updateRoster();
-  if (!editingSlug || !currentProfiles.some(profile => profile.slug === editingSlug)) editingSlug = currentProfiles[0].slug;
-  selectProfile(editingSlug);
-}
-
-function resizeUpload(file) {
-  if (!file || !['image/jpeg', 'image/png', 'image/webp'].includes(file.type)) {
-    return Promise.reject(new Error('Choose a JPG, PNG, or WebP image.'));
-  }
-  return createImageBitmap(file).then(bitmap => {
-    const scale = Math.min(1, 1600 / Math.max(bitmap.width, bitmap.height));
-    const canvas = document.createElement('canvas');
-    canvas.width = Math.max(1, Math.round(bitmap.width * scale));
-    canvas.height = Math.max(1, Math.round(bitmap.height * scale));
-    const context = canvas.getContext('2d', { alpha: false });
-    context.fillStyle = '#f6f2ec';
-    context.fillRect(0, 0, canvas.width, canvas.height);
-    context.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
-    bitmap.close();
-    return new Promise((resolve, reject) => canvas.toBlob(blob => {
-      if (blob) resolve(blob);
-      else reject(new Error(`Could not prepare ${file.name}.`));
-    }, 'image/jpeg', 0.84));
-  });
-}
-
-async function saveBlob(path, blob, message) {
-  let sha;
-  try { sha = (await githubRequest(path)).sha; }
-  catch (error) { if (error.status !== 404) throw error; }
-  const bytes = new Uint8Array(await blob.arrayBuffer());
-  const result = await githubRequest(path, {
-    method: 'PUT',
-    body: { message, content: encodeBase64(bytes), branch: 'main', ...(sha ? { sha } : {}) }
-  });
-  return result.content?.path || path;
-}
-
-async function saveProfile(event) {
-  event.preventDefault();
-  const profile = selectedProfile();
-  const status = document.getElementById('save-status');
-  const button = document.getElementById('save-profile');
-  if (!profile) { setStatus(status, 'Choose a profile first.', 'error'); return; }
-  const linkInput = document.getElementById('admin-terabox').value.trim();
-  const safeLink = linkInput ? teraboxUrl(linkInput) : '';
-  if (linkInput && !safeLink) { setStatus(status, 'Enter a valid HTTPS TerraBox link, or leave it blank to remove it.', 'error'); return; }
-  const files = uploadKinds.map(({ key, label }) => ({ key, label, file: document.querySelector(`[data-upload="${key}"]`).files[0] })).filter(item => item.file);
-  if (!files.length && safeLink === (profile.terabox || '')) { setStatus(status, 'There are no changes to save.'); return; }
-  button.disabled = true;
-  const updatedImages = { ...(profile.images || {}) };
-  try {
-    for (let index = 0; index < files.length; index++) {
-      const item = files[index];
-      setStatus(status, `Preparing ${item.label} image (${index + 1} of ${files.length})…`);
-      const blob = await resizeUpload(item.file);
-      const path = `assets/uploads/${profile.slug}/${item.key}.jpg`;
-      await saveBlob(path, blob, `Upload ${item.label.toLowerCase()} image for ${profile.name}`);
-      updatedImages[item.key] = path;
-    }
-    profile.images = updatedImages;
-    profile.terabox = safeLink;
-    setStatus(status, 'Saving profile information…');
-    const content = new TextEncoder().encode(`${JSON.stringify(currentProfiles, null, 2)}\n`);
-    const result = await githubRequest('profiles.json', {
-      method: 'PUT',
-      body: {
-        message: `Update ${profile.name} profile`,
-        content: encodeBase64(content),
-        branch: 'main',
-        sha: profileDataSha
-      }
-    });
-    profileDataSha = result.content?.sha || profileDataSha;
-    render();
-    updateRoster();
-    selectProfile(profile.slug);
-    setStatus(status, 'Saved to GitHub. The public page will update after Pages deploys.', 'success');
-  } catch (error) {
-    setStatus(status, `Could not finish saving: ${error.message}`, 'error');
-  } finally {
-    button.disabled = false;
-  }
-}
-
-document.getElementById('admin-toggle').addEventListener('click', () => {
-  adminPanel.hidden = !adminPanel.hidden;
-  if (!adminPanel.hidden) adminPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
-document.getElementById('admin-close').addEventListener('click', () => { adminPanel.hidden = true; });
-document.getElementById('github-connect-form').addEventListener('submit', async event => {
-  event.preventDefault();
-  const tokenInput = document.getElementById('github-token');
-  const status = document.getElementById('connect-status');
-  const candidate = tokenInput.value.trim();
-  if (!candidate) return;
-  setStatus(status, 'Checking repository access…');
-  githubToken = candidate;
-  try {
-    await readProfilesFromGitHub();
-    tokenInput.value = '';
-    connectView.hidden = true;
-    adminWorkspace.hidden = false;
-    setStatus(document.getElementById('save-status'), 'Connected. Choose a profile to edit.');
-  } catch (error) {
-    githubToken = '';
-    setStatus(status, `Could not connect: ${error.message}`, 'error');
-  }
-});
-document.getElementById('github-disconnect').addEventListener('click', () => {
-  githubToken = '';
-  profileDataSha = '';
-  adminWorkspace.hidden = true;
-  connectView.hidden = false;
-  document.getElementById('github-token').value = '';
-  setStatus(document.getElementById('connect-status'), 'Disconnected. Token cleared from page memory.');
-});
-profileList.addEventListener('click', event => {
-  const button = event.target.closest('[data-profile-slug]');
-  if (button) selectProfile(button.dataset.profileSlug);
-});
-document.getElementById('profile-editor').addEventListener('submit', saveProfile);
 search.addEventListener('input', render);
 cards.addEventListener('error', event => {
   const image = event.target;
@@ -330,18 +109,5 @@ cards.addEventListener('error', event => {
     image.src = image.dataset.generic;
   }
 }, true);
-for (const input of document.querySelectorAll('[data-upload]')) {
-  input.addEventListener('change', () => {
-    const file = input.files[0];
-    if (!file) return;
-    const kind = input.dataset.upload;
-    const previous = previewUrls.get(kind);
-    if (previous) URL.revokeObjectURL(previous);
-    const objectUrl = URL.createObjectURL(file);
-    previewUrls.set(kind, objectUrl);
-    document.querySelector(`[data-preview="${kind}"]`).src = objectUrl;
-    document.querySelector(`[data-file-label="${kind}"]`).textContent = file.name;
-  });
-}
 
 loadPublicProfiles();

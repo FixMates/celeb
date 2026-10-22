@@ -6,7 +6,12 @@
     "reportedAge": "41",
     "measurementListing": "G42-27-41",
     "source": "https://babewiki.com/performer/angela-white",
-    "images": {},
+    "images": {
+      "intro": "assets/uploads/angela-white/intro.png",
+      "bust": "assets/uploads/angela-white/bust.webp",
+      "waist": "assets/uploads/angela-white/waist.jpg",
+      "hips": "assets/uploads/angela-white/hips.png"
+    },
     "terabox": ""
   },
   {

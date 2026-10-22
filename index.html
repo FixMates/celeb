@@ -15,7 +15,7 @@
   <header class="site-header">
     <a class="brand" href="#top"><span class="brand-mark">F</span><span>FIGURE <b>NOTES</b></span></a>
     <nav aria-label="Main navigation"><a href="#profiles">Profiles</a><a href="#method">How we source</a></nav>
-    <a class="header-link" href="#profiles">Browse directory <span aria-hidden="true">↓</span></a>
+    <div class="header-actions"><a class="header-link" href="#profiles">Browse directory <span aria-hidden="true">↓</span></a><button class="admin-toggle" id="admin-toggle" type="button">Admin</button></div>
   </header>
   <main id="top">
     <section class="hero">
@@ -44,9 +44,35 @@
       </div>
     </section>
 
+    <section class="admin-panel" id="admin-panel" hidden aria-labelledby="admin-title">
+      <div class="admin-heading"><div><p class="eyebrow">SITE OWNER TOOLS</p><h2 id="admin-title">Profile admin</h2><p class="section-subtitle">Upload each image, add a TerraBox link, then save the changes to the public repository.</p></div><button id="admin-close" class="admin-close" type="button" aria-label="Close admin">×</button></div>
+      <div id="admin-connect-view" class="admin-connect">
+        <div class="admin-connect-copy"><h3>Connect to GitHub</h3><p>Use a fine-grained personal access token restricted to <b>FixMates/celeb</b> with <b>Contents: Read and write</b>. The token is kept in page memory only and cleared when you close or disconnect.</p><a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">Create a fine-grained token ↗</a><p class="admin-warning">Saved photos and links are committed to this public repository and become visible to every site visitor.</p></div>
+        <form id="github-connect-form" class="connect-form"><label for="github-token">GitHub token</label><input id="github-token" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_…" required><button type="submit">Connect</button><p id="connect-status" class="admin-status" aria-live="polite">Token is only sent to api.github.com for repository access.</p></form>
+      </div>
+      <div id="admin-workspace" class="admin-workspace" hidden>
+        <div class="admin-toolbar"><p>Connected to <b>FixMates/celeb</b>. Choose a profile to upload its intro, bust, waist, and hip images.</p><button id="github-disconnect" class="disconnect-button" type="button">Disconnect</button></div>
+        <div class="admin-layout">
+          <aside class="admin-roster"><h3>Profiles <span id="admin-profile-count">30</span></h3><ul id="admin-profile-list"></ul></aside>
+          <form id="profile-editor" class="profile-editor">
+            <div class="editor-title"><div><p class="eyebrow">EDIT PROFILE</p><h3 id="editor-profile-name">Select a profile</h3></div><span class="upload-hint">JPG, PNG, or WebP · images are resized before upload</span></div>
+            <div class="upload-grid">
+              <label class="upload-slot"><span>INTRO IMAGE</span><img data-preview="intro" alt="Intro image preview"><small data-file-label="intro">No image selected</small><input data-upload="intro" type="file" accept="image/jpeg,image/png,image/webp"></label>
+              <label class="upload-slot"><span>BUST IMAGE</span><img data-preview="bust" alt="Bust image preview"><small data-file-label="bust">No image selected</small><input data-upload="bust" type="file" accept="image/jpeg,image/png,image/webp"></label>
+              <label class="upload-slot"><span>WAIST IMAGE</span><img data-preview="waist" alt="Waist image preview"><small data-file-label="waist">No image selected</small><input data-upload="waist" type="file" accept="image/jpeg,image/png,image/webp"></label>
+              <label class="upload-slot"><span>HIP IMAGE</span><img data-preview="hips" alt="Hip image preview"><small data-file-label="hips">No image selected</small><input data-upload="hips" type="file" accept="image/jpeg,image/png,image/webp"></label>
+            </div>
+            <label class="terabox-admin-label" for="admin-terabox">TERRABOX LINK <span>Leave blank to remove the current link</span></label>
+            <input class="terabox-admin-input" id="admin-terabox" type="url" inputmode="url" placeholder="https://…">
+            <div class="editor-actions"><p id="save-status" class="admin-status" aria-live="polite">Select images and/or add a TerraBox share link.</p><button id="save-profile" type="submit">Save to GitHub</button></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <section class="directory" id="profiles">
       <div class="directory-head">
-        <div><p class="eyebrow">THE DIRECTORY</p><h2>Featured profiles</h2><p class="section-subtitle">Browse performer bios and reported stats. Each profile includes four original illustrations and its source link.</p></div>
+        <div><p class="eyebrow">THE DIRECTORY</p><h2>Featured profiles</h2><p class="section-subtitle">Browse performer bios and reported stats. Upload custom intro, bust, waist, and hip images from Admin.</p></div>
         <div class="directory-tools"><label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search performers" aria-label="Search performers"></label><span class="result-count" id="result-count">30 profiles</span></div>
       </div>
       <div class="profile-grid" id="profile-grid" aria-live="polite"></div>
@@ -55,11 +81,10 @@
 
     <section class="method" id="method">
       <div><p class="eyebrow">EDITORIAL NOTES</p><h2>How to read these figures</h2></div>
-      <div class="method-copy"><p>Birth dates and measurements are taken from the linked public profile pages. Those pages are community-submitted, and measurements can be incomplete, inconsistent, or out of date. Age is calculated from the listed birth date. “Bust” displays the reported bra size when one is available; waist and hip values are shown in inches. Hip measurement is a circumference figure, not a separate “butt size.”</p><p>Every illustration on this site is an original generic fashion diagram, fully clothed and not to scale. The diagrams identify measurement areas only; they are not photographs, likenesses, or depictions of any performer’s actual body.</p><p>TerraBox fields are provided for owner-supplied links. Saving a link stores it in the current browser only. To publish a permanent link for all visitors, update that performer’s <code>terabox</code> value in <code>profiles.js</code> and commit the change.</p></div>
+      <div class="method-copy"><p>Birth dates and measurements are taken from the linked public profile pages. Those pages are community-submitted, and measurements can be incomplete, inconsistent, or out of date. Age is calculated from the listed birth date. “Bust” displays the reported bra size when one is available; waist and hip values are shown in inches. Hip measurement is a circumference figure, not a separate “butt size.”</p><p>Empty image slots use original generic fashion diagrams, fully clothed and not to scale. Admin uploads replace the guides and appear publicly after the GitHub Pages deployment completes. Uploaded images are not represented as official or current photographs.</p><p>TerraBox links are stored in <code>profiles.json</code>. Admin updates commit the profile data and uploaded images directly to the repository.</p></div>
     </section>
   </main>
   <footer><a class="brand footer-brand" href="#top"><span class="brand-mark">F</span><span>FIGURE <b>NOTES</b></span></a><p>Publicly sourced biographical reference · Original illustrations · 18+</p><span class="copyright">© 2026 FIGURE NOTES</span></footer>
-  <script src="profiles.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

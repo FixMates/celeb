@@ -6,7 +6,7 @@ Static directory of 30 adult-performer profiles. The directory is a landing page
 
 Place profile images under `assets/uploads/<profile-slug>/` and update that performer's `images` paths in `profiles.json`. The `intro`, `bust`, `waist`, and `hips` keys appear in that performer's dedicated page gallery. Set the `terabox` field in `profiles.json` to an optional HTTPS share link.
 
-The repository is public, so committed images and TerraBox links are public too.
+The repository is public, so committed images and TerraBox links are public too. The directory includes a one-click ZIP containing four image slots for every profile, with generic illustrations for any unfilled slots. Creative Commons portrait credits and license links are included both on the relevant profile page and in the ZIP manifest.
 
 ## Data and illustrations
 

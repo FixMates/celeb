@@ -21,7 +21,12 @@
     "reportedAge": "42",
     "measurementListing": "DD36-26-39",
     "source": "https://babewiki.com/performer/sophie-dee",
-    "images": {},
+    "images": {
+      "intro": "assets/uploads/sophie-dee/intro.jpg",
+      "bust": "assets/uploads/sophie-dee/bust.jpg",
+      "waist": "assets/uploads/sophie-dee/waist.webp",
+      "hips": "assets/uploads/sophie-dee/hips.jpg"
+    },
     "terabox": ""
   },
   {
@@ -31,7 +36,12 @@
     "reportedAge": "54",
     "measurementListing": "DD38-20-34",
     "source": "https://babewiki.com/performer/lisa-ann",
-    "images": {},
+    "images": {
+      "intro": "assets/uploads/lisa-ann/intro.webp",
+      "bust": "assets/uploads/lisa-ann/bust.jpg",
+      "waist": "assets/uploads/lisa-ann/waist.jpg",
+      "hips": "assets/uploads/lisa-ann/hips.jpg"
+    },
     "terabox": ""
   },
   {
@@ -41,8 +51,17 @@
     "reportedAge": "53",
     "measurementListing": "DD34-25-36",
     "source": "https://babewiki.com/performer/brandi-love",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/brandi-love/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Toglenn",
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Brandi_Love_2014_(cropped).jpg"
+      }
+    }
   },
   {
     "name": "Kendra Lust",
@@ -51,8 +70,17 @@
     "reportedAge": "48",
     "measurementListing": "DDD34-25-36",
     "source": "https://babewiki.com/performer/kendra-lust",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/kendra-lust/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Toglenn",
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Kendra_Lust_2015.jpg"
+      }
+    }
   },
   {
     "name": "Ava Addams",
@@ -61,8 +89,17 @@
     "reportedAge": "47",
     "measurementListing": "DDD32-23-34",
     "source": "https://babewiki.com/performer/ava-addams",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/ava-addams/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Kent Madsen",
+        "license": "CC BY-SA 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Ava_Addams_(Cropped).jpg"
+      }
+    }
   },
   {
     "name": "India Summer",
@@ -71,8 +108,17 @@
     "reportedAge": "51",
     "measurementListing": "B32-24-34",
     "source": "https://babewiki.com/performer/india-summer",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/india-summer/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Toglenn",
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:India_Summer_2011.jpg"
+      }
+    }
   },
   {
     "name": "Julia Ann",
@@ -81,8 +127,17 @@
     "reportedAge": "57",
     "measurementListing": "E34-24-38",
     "source": "https://babewiki.com/performer/julia-ann",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/julia-ann/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Baldwin Saintilus",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Julia_Ann,_2014_(cropped).jpg"
+      }
+    }
   },
   {
     "name": "Nina Hartley",
@@ -91,8 +146,17 @@
     "reportedAge": "67",
     "measurementListing": "D36-24-39",
     "source": "https://babewiki.com/performer/nina-hartley",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/nina-hartley/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Michael Dorausch from Venice, USA",
+        "license": "CC BY-SA 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Nina_Hartley_AEE_2013.jpg"
+      }
+    }
   },
   {
     "name": "Tanya Tate",
@@ -101,8 +165,17 @@
     "reportedAge": "47",
     "measurementListing": "F34-24-34",
     "source": "https://babewiki.com/performer/tanya-tate",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/tanya-tate/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Toglenn",
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Tanya_Tate,_2015_(cropped).jpg"
+      }
+    }
   },
   {
     "name": "Phoenix Marie",
@@ -111,8 +184,17 @@
     "reportedAge": "45",
     "measurementListing": "DD34-26-38",
     "source": "https://babewiki.com/performer/phoenix-marie",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/phoenix-marie/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Gary",
+        "license": "CC BY-SA 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Phoenix_Marie_-_2014_AVN_Adult_Entertainment_Expo_AEE_at_Hard_Rock_Hotel.jpg"
+      }
+    }
   },
   {
     "name": "Alexis Fawx",
@@ -121,8 +203,17 @@
     "reportedAge": "51",
     "measurementListing": "DDD32-24-33",
     "source": "https://babewiki.com/performer/alexis-fawx",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/alexis-fawx/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Holly Randall Unfiltered",
+        "license": "CC BY 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Alexis_Fawx.jpg"
+      }
+    }
   },
   {
     "name": "Cherie DeVille",
@@ -131,8 +222,17 @@
     "reportedAge": "48",
     "measurementListing": "DD32-23-35",
     "source": "https://babewiki.com/performer/cherie-deville",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/cherie-deville/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Holly Randall",
+        "license": "CC BY 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:211206_Cherie_Deville_The_Internet%27s_Favorite_Stepmom_(1)_13.jpg"
+      }
+    }
   },
   {
     "name": "Bridgette B",
@@ -141,8 +241,17 @@
     "reportedAge": "43",
     "measurementListing": "F40-28-38",
     "source": "https://babewiki.com/performer/bridgette-b",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/bridgette-b/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Toglenn",
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Bridgette_B._2014.jpg"
+      }
+    }
   },
   {
     "name": "Veronica Avluv",
@@ -151,8 +260,18 @@
     "reportedAge": "53",
     "measurementListing": "D34-24-34",
     "source": "https://babewiki.com/performer/veronica-avluv",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/veronica-avluv/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Gary",
+        "license": "CC BY-SA 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:D6B_1934_-_Veronica_Avluv_(12228340373).jpg",
+        "changes": "Displayed using a 960 px Wikimedia Commons thumbnail."
+      }
+    }
   },
   {
     "name": "Stormy Daniels",
@@ -161,8 +280,17 @@
     "reportedAge": "47",
     "measurementListing": "DD36-26-36",
     "source": "https://babewiki.com/performer/stormy-daniels",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/stormy-daniels/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Alan",
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:AN_Stormy_Daniels_1.jpg"
+      }
+    }
   },
   {
     "name": "Ginger Lynn",
@@ -171,8 +299,17 @@
     "reportedAge": "63",
     "measurementListing": "B34-24-34",
     "source": "https://babewiki.com/performer/ginger-lynn-allen",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/ginger-lynn-allen/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Luke Ford",
+        "license": "CC BY-SA 2.5",
+        "source": "https://commons.wikimedia.org/wiki/File:Ginger_Lynn,_2006.JPG"
+      }
+    }
   },
   {
     "name": "Holly Halston",
@@ -181,8 +318,17 @@
     "reportedAge": "51",
     "measurementListing": "DD36-24-32",
     "source": "https://babewiki.com/performer/holly-halston",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/holly-halston/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "www.iafd.com",
+        "license": "CC BY-SA 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Holly_Halston_iafd.jpg"
+      }
+    }
   },
   {
     "name": "Lisa Sparxxx",
@@ -191,8 +337,18 @@
     "reportedAge": "49",
     "measurementListing": "36DDD-32-38",
     "source": "https://babewiki.com/performer/lisa-sparxxx",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/lisa-sparxxx/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Gary",
+        "license": "CC BY-SA 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:09AVN58_-_Lisa_Sparxxx_(crop).jpg",
+        "changes": "Displayed using a 960 px Wikimedia Commons thumbnail."
+      }
+    }
   },
   {
     "name": "Tabitha Stevens",
@@ -201,8 +357,17 @@
     "reportedAge": "56",
     "measurementListing": "DD34-23-34",
     "source": "https://babewiki.com/performer/tabitha-stevens",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/tabitha-stevens/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Luke Ford / LukeIsBack.com",
+        "license": "CC BY-SA 2.5",
+        "source": "https://commons.wikimedia.org/wiki/File:Tabitha_Stevens.jpg"
+      }
+    }
   },
   {
     "name": "Nina Mercedez",
@@ -211,8 +376,18 @@
     "reportedAge": "46",
     "measurementListing": "DD34-25-34",
     "source": "https://babewiki.com/performer/nina-mercedez",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/nina-mercedez/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "GabboT",
+        "license": "CC BY-SA 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Nina_Mercedez_01_(9511904907).jpg",
+        "changes": "Displayed using a 960 px Wikimedia Commons thumbnail."
+      }
+    }
   },
   {
     "name": "Rebecca Love",
@@ -231,8 +406,18 @@
     "reportedAge": "40",
     "measurementListing": "A32-25-35",
     "source": "https://babewiki.com/performer/misty-stone",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/misty-stone/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Baldwin Saintilus",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:James_Bartholet_and_Misty_Stone_at_AVN_Awards_2016_(26606380651).jpg",
+        "changes": "Displayed using a 960 px Wikimedia Commons thumbnail."
+      }
+    }
   },
   {
     "name": "Capri Cavanni",
@@ -241,8 +426,18 @@
     "reportedAge": "44",
     "measurementListing": "DD34-25-34",
     "source": "https://babewiki.com/performer/capri-cavanni",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/capri-cavanni/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Sunshine Coast BC",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Capri_Cavanni_at_AVN_Awards_2014.jpg",
+        "changes": "Displayed using a 960 px Wikimedia Commons thumbnail."
+      }
+    }
   },
   {
     "name": "Sinn Sage",
@@ -251,8 +446,18 @@
     "reportedAge": "43",
     "measurementListing": "B34-26-40",
     "source": "https://babewiki.com/performer/sinn-sage",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/sinn-sage/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Toglenn",
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Sinn_Sage_2011.jpg",
+        "changes": "Displayed using a 960 px Wikimedia Commons thumbnail."
+      }
+    }
   },
   {
     "name": "Dani Daniels",
@@ -261,8 +466,18 @@
     "reportedAge": "37",
     "measurementListing": "C34-25-38",
     "source": "https://babewiki.com/performer/dani-daniels",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/dani-daniels/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Baldwin Saintilus",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Dani_Daniels_%26_Steven_St._Croix_at_AVN_Awards_2016.jpg",
+        "changes": "Displayed using a 960 px Wikimedia Commons thumbnail."
+      }
+    }
   },
   {
     "name": "Asa Akira",
@@ -271,8 +486,17 @@
     "reportedAge": "40",
     "measurementListing": "C32-24-34",
     "source": "https://babewiki.com/performer/asa-akira",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/asa-akira/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Michael Dorausch",
+        "license": "CC BY-SA 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Asa_Akira,_2013_(cropped).jpg"
+      }
+    }
   },
   {
     "name": "Teagan Presley",
@@ -281,8 +505,17 @@
     "reportedAge": "41",
     "measurementListing": "D34-24-34",
     "source": "https://babewiki.com/performer/teagan-presley",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/teagan-presley/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Luke Ford / LukeIsBack.com",
+        "license": "CC BY-SA 2.5",
+        "source": "https://commons.wikimedia.org/wiki/File:Teagan_Presley,_Scott_Fayner_at_Digital_Playground_Party_2.jpg"
+      }
+    }
   },
   {
     "name": "Eva Notty",
@@ -291,8 +524,18 @@
     "reportedAge": "44",
     "measurementListing": "J36-28-34",
     "source": "https://babewiki.com/performer/eva-notty",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/eva-notty/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Gary",
+        "license": "CC BY-SA 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Eva_Notty_AVN_Expo_2015.jpg",
+        "changes": "Displayed using a 960 px Wikimedia Commons thumbnail."
+      }
+    }
   },
   {
     "name": "Jada Fire",
@@ -301,7 +544,16 @@
     "reportedAge": "50",
     "measurementListing": "DD36-24-36",
     "source": "https://babewiki.com/performer/jada-fire",
-    "images": {},
-    "terabox": ""
+    "images": {
+      "intro": "assets/uploads/jada-fire/intro.jpg"
+    },
+    "terabox": "",
+    "imageCredits": {
+      "intro": {
+        "author": "Toglenn",
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Jada_Fire_2010.jpg"
+      }
+    }
   }
 ]

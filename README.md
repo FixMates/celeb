@@ -9,6 +9,10 @@ A lightweight, mobile-friendly model image journal for GitHub Pages. The homepag
 
 The current gallery art is original AI-generated fashion artwork depicting fictional, fully clothed adults. The accompanying story text is fictional and does not describe a real model. The additional photos in the folders beside this repository are not included in the public site; add them only after confirming that everyone shown is an adult and the images are cleared for publication.
 
+## Photo gallery
+
+A separate full-length vertical image gallery is available at [moments-gallery/](moments-gallery/). It includes the image collection and a link to the full video on TerraBox.
+
 ## TerraBox call-to-action
 
 Each category page has a TerraBox panel after its story. The 12-second countdown starts when the panel is scrolled into view. The same share link is configured per story in `models.json`.

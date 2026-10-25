@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1eb">
+  <meta name="description" content="A continuous, full-length photo gallery from the Moments collection.">
+  <title>Photo Gallery — Moments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="photos.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="#top" aria-label="Moments gallery home"><span class="wordmark-mark">M</span><span>MOMENTS</span></a>
+    <a class="top-link" href="#video">Watch the full video <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="top">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">A COLLECTION OF MOMENTS</p>
+      <h1 id="page-title">Photo Gallery<span class="title-period">.</span></h1>
+      <p class="intro-copy">Take your time. The collection unfolds one photograph at a time.</p>
+      <div class="intro-meta"><span class="meta-rule"></span><span id="photo-count">Loading photographs…</span></div>
+    </section>
+    <section class="gallery" id="gallery" aria-label="Photographs"></section>
+    <section class="video-section" id="video" aria-labelledby="video-title">
+      <div class="video-orbit" aria-hidden="true"><span>▶</span></div>
+      <p class="eyebrow">THE STORY CONTINUES</p>
+      <h2 id="video-title">Watch the full video</h2>
+      <p class="video-copy">Continue the collection in the full-length video.</p>
+      <a class="video-button" href="https://1024terabox.com/s/1t0g23Ijewx2VGuTJT__eQA" target="_blank" rel="noopener noreferrer">Open full video <span aria-hidden="true">↗</span></a>
+      <p class="video-note">Opens in a new tab</p>
+    </section>
+  </main>
+  <footer><a class="wordmark footer-mark" href="#top"><span class="wordmark-mark">M</span><span>MOMENTS</span></a><a class="back-top" href="#top">Back to top ↑</a></footer>
+</body>
+</html>

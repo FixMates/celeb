@@ -1,19 +1,22 @@
-# Figure Notes
+# Model Journal
 
-Static directory of 30 adult-performer profiles. The directory is a landing page; each performer has a dedicated, shareable page at `profiles/<slug>/`. Each profile page has age, available reported measurements, an intro image, bust/waist/hip images, a linked data source, and a TerraBox link area.
+A lightweight, mobile-friendly model image journal for GitHub Pages. The homepage displays the featured image stories vertically. Each story also has its own shareable category page:
 
-## Profile images and TerraBox links
+- `categories/trending/`
+- `categories/hottest/`
+- `categories/new/`
+- `categories/classic/`
 
-Place profile images under `assets/uploads/<profile-slug>/` and update that performer's `images` paths in `profiles.json`. The `intro`, `bust`, `waist`, and `hips` keys appear in that performer's dedicated page gallery. Set the `terabox` field in `profiles.json` to an optional HTTPS share link.
+The current gallery art is original AI-generated fashion artwork depicting fictional, fully clothed adults. The accompanying story text is fictional and does not describe a real model. The additional photos in the folders beside this repository are not included in the public site; add them only after confirming that everyone shown is an adult and the images are cleared for publication.
 
-The repository is public, so committed images and TerraBox links are public too. The directory includes a one-click ZIP containing four image slots for every profile, with generic illustrations for any unfilled slots. Creative Commons portrait credits and license links are included both on the relevant profile page and in the ZIP manifest.
+## TerraBox call-to-action
 
-## Data and illustrations
+Each category page has a TerraBox panel after its story. The 12-second countdown starts when the panel is scrolled into view. The same share link is configured per story in `models.json`.
 
-Profile dates and reported measurements are sourced from the link shown on each card. The source is community-submitted and its profile fields may be incomplete, inconsistent, or outdated. Ages are calculated from listed birth dates. Bust is shown as the listed bra size where available; waist and hip figures are in inches. Missing values are labelled “Not listed.”
+## Ads
 
-Unfilled image slots show generic, fully clothed SVG measurement guides that do not depict or claim to resemble the performer. A supplied profile image replaces that guide for its image slot.
+The provided ad scripts are included on the homepage and each category page. A 160×600 banner slot appears in the sidebar on wide screens and below the story on smaller screens.
 
-## GitHub Pages
+## Editing stories
 
-The site uses plain HTML, CSS, JavaScript, and JSON. GitHub Pages is configured with the repository’s Actions workflow in `.github/workflows/pages.yml`.
+Edit `models.json` to change a category title, story, image path, or TerraBox link. Add optimized image files under `assets/models/`. The site is static HTML, CSS, JavaScript, and JSON; no server or database is required.

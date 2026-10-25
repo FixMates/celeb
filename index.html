@@ -3,63 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f2ec">
-  <meta name="description" content="A source-aware directory of adult performers, with age and reported body measurements.">
-  <title>Figure Notes — Adult Performer Profiles</title>
+  <meta name="theme-color" content="#171513">
+  <meta name="description" content="A simple model image journal: trending style, new looks, hottest picks, and classic fashion stories.">
+  <title>Model Journal — Trending Looks & Stories</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="gallery.css">
 </head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="#top"><span class="brand-mark">F</span><span>FIGURE <b>NOTES</b></span></a>
-    <nav aria-label="Main navigation"><a href="#profiles">Profiles</a><a href="#method">How we source</a></nav>
-    <div class="header-actions"><a class="header-link" href="#profiles">Browse directory <span aria-hidden="true">↓</span></a></div>
+<body data-page="home" data-site-root="">
+  <header class="journal-header">
+    <a class="journal-brand" href="./"><span class="brand-mark">M</span><span>MODEL <b>JOURNAL</b></span></a>
+    <nav class="category-nav" aria-label="Model image categories">
+      <a href="categories/trending/">Trending</a><a href="categories/hottest/">Hottest</a><a href="categories/new/">New</a><a href="categories/classic/">Classic</a>
+    </nav>
+    <a class="header-cta" href="#image-feed">Browse images <span aria-hidden="true">↓</span></a>
   </header>
-  <main id="top">
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="dot"></span> ADULT PERFORMER DIRECTORY <span class="eyebrow-divider">·</span> 30 PROFILES</p>
-        <h1>Profiles, with<br><em>the details</em></h1>
-        <p class="intro">A quick-reference directory of adult performers, with reported ages and body measurements. Figures are attributed to their source and treated as estimates, not official or current measurements.</p>
-        <a class="primary-link" href="#profiles">Explore all profiles <span>↓</span></a>
-        <p class="age-note">Adults only · Educational and biographical reference · 18+</p>
-      </div>
-      <div class="hero-art" aria-label="Original illustrated body measurement guide">
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <div class="hero-measure"><span class="hero-measure-label">BUST</span><span class="hero-measure-line"></span><span class="hero-measure-value">—</span></div>
-        <div class="hero-measure measure-waist"><span class="hero-measure-label">WAIST</span><span class="hero-measure-line"></span><span class="hero-measure-value">—</span></div>
-        <div class="hero-measure measure-hips"><span class="hero-measure-label">HIPS</span><span class="hero-measure-line"></span><span class="hero-measure-value">—</span></div>
-        <svg class="hero-figure" viewBox="0 0 250 390" role="img" aria-label="Fully clothed abstract fashion figure with measurement guide lines">
-          <ellipse cx="126" cy="366" rx="69" ry="8" fill="#d9cec2"/>
-          <path d="M105 68h42v40h-42z" fill="#d8aa91"/><ellipse cx="126" cy="46" rx="35" ry="43" fill="#ddb49c"/>
-          <path d="M91 50C83 13 106 0 128 4c27 3 39 21 31 51-7-20-17-32-31-37-10 14-21 22-37 25z" fill="#44352f"/>
-          <path d="M104 103c-20 3-32 13-39 31l15 21-20 86-22 77c-3 9 3 15 11 14 7-1 11-7 14-15l35-82 9-28 10 156h59l9-156 10 28 35 82c3 8 7 14 14 15 8 1 14-5 11-14l-22-77-20-86 15-21c-7-18-19-28-39-31-8 10-17 14-30 14s-22-4-30-14z" fill="#a65343"/>
-          <path d="M103 137c9 10 17 14 23 14s14-4 23-14" fill="none" stroke="#f2dace" stroke-width="2"/>
-          <g stroke="#f7eee7" stroke-width="1.4" stroke-dasharray="4 4"><path d="M70 179h112"/><path d="M82 223h88"/><path d="M63 274h126"/></g>
-          <path d="M98 360h31l-2 19h-42c-5 0-7-4-2-8zM132 360h31l15 11c5 4 3 8-3 8h-42z" fill="#302b28"/>
-        </svg>
-        <div class="art-caption">ORIGINAL FIGURE GUIDE <span>Illustration · not to scale</span></div>
-      </div>
+  <main class="journal-main">
+    <section class="journal-hero">
+      <p class="eyebrow"><span class="eyebrow-dot"></span> STYLE · STORIES · IMAGE JOURNAL</p>
+      <h1>Hottest Models<br><em>in Town</em></h1>
+      <p class="hero-copy">A scrollable collection of fictional fashion editorials, short stories, and looks worth a second glance.</p>
+      <div class="hero-tags"><span>Trending now</span><span>Fresh looks</span><span>Classic mood</span></div>
     </section>
 
-    <section class="directory" id="profiles">
-      <div class="directory-head">
-        <div><p class="eyebrow">THE DIRECTORY</p><h2>Featured profiles</h2><p class="section-subtitle">Browse performer bios and reported stats, with dedicated intro, bust, waist, and hip image galleries.</p><a class="download-images-link" href="downloads/profile-images.zip" download>Download all profile images <span aria-hidden="true">↓</span></a></div>
-        <div class="directory-tools"><label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search performers" aria-label="Search performers"></label><span class="result-count" id="result-count">30 profiles</span></div>
-      </div>
-      <div class="profile-grid" id="profile-grid" aria-live="polite"></div>
-      <p class="no-results" id="no-results" hidden>No profiles match that search. Try another name.</p>
-    </section>
-
-    <section class="method" id="method">
-      <div><p class="eyebrow">EDITORIAL NOTES</p><h2>How to read these figures</h2></div>
-      <div class="method-copy"><p>Birth dates and measurements are taken from the linked public profile pages. Those pages are community-submitted, and measurements can be incomplete, inconsistent, or out of date. Age is calculated from the listed birth date. “Bust” displays the reported bra size when one is available; waist and hip values are shown in inches. Hip measurement is a circumference figure, not a separate “butt size.”</p><p>Empty image slots use original generic fashion diagrams, fully clothed and not to scale. Profile images are supplied by the site owner and are not represented as official or current photographs.</p><p>TerraBox links and image paths are stored with each performer in <code>profiles.json</code>.</p></div>
-    </section>
+    <div class="home-columns">
+      <section class="image-feed" id="image-feed" aria-label="Model image stories">
+        <div class="feed-heading"><div><p class="eyebrow">THE LATEST</p><h2>Image stories</h2></div><span class="feed-count">4 EDITORIALS</span></div>
+        <div id="home-feed" class="home-feed" aria-live="polite"><p class="loading-note">Loading the image journal…</p></div>
+      </section>
+      <aside class="journal-sidebar">
+        <section class="ad-card"><p class="eyebrow">SPONSORED</p><div class="skyscraper-ad" aria-label="Advertisement"><script>window.atOptions={key:'4a0f4af868132ad64c5e05b4daa8b6d8',format:'iframe',height:600,width:160,params:{}};</script><script data-cfasync="false" src="https://bicea.org/22/4a0f4af868132ad64c5e05b4daa8b6d8"></script></div></section>
+        <section class="category-card"><p class="eyebrow">PICK A MOOD</p><h2>Browse categories</h2><ul class="category-list"><li><a href="categories/trending/"><span>Trending</span><b>↗</b></a></li><li><a href="categories/hottest/"><span>Hottest in Town</span><b>↗</b></a></li><li><a href="categories/new/"><span>New Looks</span><b>↗</b></a></li><li><a href="categories/classic/"><span>Classic Style</span><b>↗</b></a></li></ul></section>
+      </aside>
+    </div>
   </main>
-  <footer><a class="brand footer-brand" href="#top"><span class="brand-mark">F</span><span>FIGURE <b>NOTES</b></span></a><p>Publicly sourced biographical reference · Original illustrations · 18+</p><span class="copyright">© 2026 FIGURE NOTES</span></footer>
-  <script src="app.js"></script>
+  <footer class="journal-footer"><a class="journal-brand" href="./"><span class="brand-mark">M</span><span>MODEL <b>JOURNAL</b></span></a><p>Original, fictional fashion artwork and editorial vignettes.</p><span>For adults · 18+</span></footer>
+  <script src="gallery.js"></script>
   <script data-cfasync="false" src="https://afders.org/1/4210d61c90e1f1489ba79c7785cb02b9"></script>
   <script data-cfasync="false" src="https://bicea.org/14/d38807f9fafe4626fddf01054484a167"></script>
 </body>

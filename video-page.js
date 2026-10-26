@@ -48,6 +48,7 @@ if (gallery) {
     caption.append(collection, number);
     figure.append(frame, caption);
     fragment.append(figure);
+    if (index === 0 && window.createGalleryAd) fragment.append(window.createGalleryAd());
   });
   gallery.append(fragment);
 }
